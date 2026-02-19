@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Beacon Of Hope Foundation - Caring for African children and orphans, providing education, hope, and a brighter future." />
+    <meta name="keywords" content="orphans, kids, children, caring, saving, education, Africa, NGO, charity" />
+    <title>Beacon Of Hope Foundation - Lighting Hope for African Children</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        /* ========================================
+           CSS VARIABLES - GREEN COLOR PALETTE
+           ======================================== */
+        :root {
+            /* Greens */
+            --primary: #10b981;          /* Emerald - Main brand */
+            --primary-dark: #059669;     /* Hover state */
+            --primary-light: #d1fae5;    /* Light background */
+            --secondary: #064e3b;        /* Deep forest - Text/Accents */
+            --accent: #34d399;           /* Highlights */
+            --mint: #a7f3d0;             /* Soft mint */
+            
+            /* Neutrals */
+            --white: #ffffff;
+            --off-white: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            
+            /* Utilities */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --container-width: 1200px;
+        }
+
+        /* ========================================
+           GLOBAL RESET & BASE STYLES
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--off-white);
+            color: var(--gray-700);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .fullContainer {
+            width: 100%;
+            padding: 5rem 0;
+        }
+
+        .sectionTitle {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .sectionSubtitle {
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            background: var(--primary-light);
+            color: var(--secondary);
+        }
+
+        .btn a {
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ========================================
+           NAVBAR - FIXED TOP POSITION
+           ======================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            padding: 0.75rem 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+
+        .logo h1 span {
+            color: var(--primary);
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-list a {
+            font-weight: 500;
+            color: var(--gray-700);
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-list a:hover::after,
+        .nav-list a.active::after {
+            width: 100%;
+        }
+
+        .nav-list a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 50px;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 28px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* Mobile Menu Active State */
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ========================================
+           HERO / BANNER SECTION
+           ======================================== */
+        .banner {
+            margin-top: 0;
+            padding: 8rem 0 5rem;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 50%, var(--mint) 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(167, 243, 208, 0.3) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .banner .container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .banner-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .banner-content h1 span {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .banner-content h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: rgba(16, 185, 129, 0.3);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .banner-content .p {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .banner-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .banner-image {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .banner-image img {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .banner-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 4px solid var(--primary);
+            border-radius: var(--radius-lg);
+            z-index: -1;
+        }
+
+        .stats-badge {
+            position: absolute;
+            bottom: 30px;
+            left: -30px;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .stats-badge .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stats-badge .label {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        /* ========================================
+           ABOUT SECTION - WITH IMAGES
+           ======================================== */
+        #aboutSection {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(6, 78, 59, 0.2) 100%);
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .about-content .p {
+            text-align: left;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+        }
+
+        /* Action Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .action-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .action-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .action-card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .action-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .action-card:hover .action-card-image img {
+            transform: scale(1.1);
+        }
+
+        .action-card-content {
+            padding: 2rem;
+        }
+
+        .action-card .title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .action-card p {
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           PROGRAMS SECTION - WITH IMAGES
+           ======================================== */
+        .program {
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--primary-light) 100%);
+        }
+
+        .boxContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .program-box {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .program-box:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .program-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .program-box:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .program-box .programTitle {
+            padding: 1.5rem 1.5rem 0.5rem;
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1.3rem;
+        }
+
+        .program-box .donationCount {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
+        .program-box .donationCount span {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .progress-bar {
+            width: calc(100% - 3rem);
+            margin: 0 1.5rem 1rem;
+            height: 8px;
+            background: var(--gray-100);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 4px;
+            width: 65%;
+            transition: width 1s ease;
+        }
+
+        .program-box .btn {
+            width: calc(100% - 3rem);
+            margin: 0 1.5rem 1.5rem;
+            padding: 0.875rem;
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           EDUCATION SECTION WITH VIDEO
+           ======================================== */
+        .education {
+            position: relative;
+            background: var(--secondary);
+            color: var(--white);
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .video-wrapper {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .videoPlayer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .education-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* background: linear-gradient(135deg, rgba(6, 78, 59, 0.9) 0%, rgba(5, 150, 105, 0.8) 100%); */
+            display: flex;
+            align-items: center;
+        }
+
+        .education .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .education-content {
+            max-width: 600px;
+        }
+
+        .education .sectionTitle {
+            color: var(--white);
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .education .sectionTitle::after {
+            left: 0;
+            transform: none;
+            background: var(--primary);
+        }
+
+        .educationContainer h3 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .educationContainer h3 strong {
+            color: var(--primary);
+        }
+
+        .educationContainer .p {
+            color: var(--gray-200);
+            margin-bottom: 2rem;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        /* ========================================
+           BLOG SECTION - NEW
+           ======================================== */
+        .blog {
+            background: var(--white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-100);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .blog-image {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray-500);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .blog-content p {
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+            color: var(--primary-dark);
+        }
+
+        /* ========================================
+           GALLERY SECTION
+           ======================================== */
+        .gallery {
+            background: var(--off-white);
+        }
+
+        .galleryContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 1;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1rem 1rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--white);
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay .title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* ========================================
+           JOIN SECTION
+           ======================================== */
+        .join {
+            background: linear-gradient(135deg, var(--secondary) 0%, #065f46 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .join::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(167, 243, 208, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .join .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .joinTitle {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .joinTitle span {
+            color: var(--primary);
+        }
+
+        .jp {
+            color: var(--gray-200);
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .join-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .joinNow, .adoptBtn {
+            padding: 1.25rem 3rem;
+            font-size: 1.1rem;
+            min-width: 250px;
+        }
+
+        .adoptBtn {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .adoptBtn:hover {
+            background: var(--white);
+            color: var(--secondary);
+        }
+
+        /* ========================================
+           CONTACT SECTION - NEW
+           ======================================== */
+        .contact {
+            background: var(--off-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 300px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 1.75rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-wrapper > p {
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--gray-100);
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--off-white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.25rem;
+            font-size: 1.1rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .submit-btn i {
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: 5rem 0 2rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo h1 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.875rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--gray-400);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .footer-column p {
+            color: var(--gray-400);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           RESPONSIVE MEDIA QUERIES
+           ======================================== */
+        @media (max-width: 1024px) {
+            .banner .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .banner-content .p {
+                text-align: center;
+            }
+
+            .banner-buttons {
+                justify-content: center;
+            }
+
+            .banner-image {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content .p {
+                text-align: left;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Mobile Navigation */
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-list {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--white);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+            }
+
+            .nav-list.active {
+                transform: translateX(0);
+            }
+
+            .nav-list a {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            /* Hero Section */
+            .banner {
+                padding: 7rem 0 4rem;
+                min-height: auto;
+            }
+
+            .banner-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .banner-content .p {
+                font-size: 1.1rem;
+            }
+
+            /* Sections */
+            .fullContainer {
+                padding: 4rem 0;
+            }
+
+            .sectionTitle {
+                font-size: 2rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            /* Join Section */
+            .joinTitle {
+                font-size: 2rem;
+            }
+
+            .jp {
+                font-size: 1rem;
+            }
+
+            .join-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .joinNow, .adoptBtn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            /* Footer */
+            footer .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-column ul li a {
+                justify-content: center;
+            }
+
+            /* Blog */
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .banner-content h1 {
+                font-size: 2rem;
+            }
+
+            .sectionTitle {
+                font-size: 1.75rem;
+            }
+
+            .btn {
+                padding: 0.875rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 2rem 1.5rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           ANIMATIONS & EFFECTS
+           ======================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Parallax effect for banner */
+        .banner {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Smooth reveal */
+        [data-sr-id] {
+            visibility: visible !important;
+        }
+
+        /* Loading animation for images */
+        img {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        img.loaded {
+            opacity: 1;
+        }
+
+        /* Ripple effect for buttons */
+        .btn, button, .submit-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header id="navbar">
+        <div class="container">
+            <a href="#homeSection" class="logo" aria-label="Beacon Children's Foundation Home">
+                <div class="logo-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h1>Beacon<span>Of Hope Foundation</span></h1>
+            </a>
+            
+            <nav aria-label="Main Navigation">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                
+                <ul class="nav-list" id="navList">
+                    <li><a href="#homeSection" class="active">Home</a></li>
+                    <li><a href="#aboutSection">About Us</a></li>
+                    <li><a href="#programSection">Programs</a></li>
+                    <li><a href="#educationSection">Education</a></li>
+                    <li><a href="#blogSection">Blog</a></li>
+                    <li><a href="#gallerySection">Gallery</a></li>
+                    <li><a href="#contactSection">Contact</a></li>
+                    <li><a href="#joinSection" class="nav-cta">Join Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO / BANNER SECTION -->
+    <section class="banner" id="homeSection">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Together We Can <span>Save Lives</span></h1>
+                <p class="p">Let's protect African children and give them a brighter, more promising future through your support. Every child deserves love, education, and hope.</p>
+                <div class="banner-buttons">
+                    <button class="btn"><a href="https://wa.me/+256741024006"><i class="fas fa-heart"></i> Donate Now</a></button>
+                    <button class="btn btn-outline"><a href="#aboutSection"><i class="fas fa-play-circle"></i> Learn More</a></button>
+                </div>
+            </div>
+            <div class="banner-image">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" alt="Happy African children" loading="lazy" />
+                <div class="stats-badge">
+                    <div class="number">5000+</div>
+                    <div class="label">Lives<br>Impacted</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="fullContainer" id="aboutSection">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?w=800&q=80" alt="Children learning in classroom" loading="lazy" />
+                </div>
+                <div class="about-content">
+                    <h2>Empowering Children, Transforming Communities</h2>
+                    <p class="p">Beacon Children's Foundation is dedicated to caring for African children and orphans. We believe every child deserves love, education, and a chance to thrive. Through community support and compassionate action, we're building a better tomorrow.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Quality Education</h3>
+                                <p>Providing access to learning</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Healthcare</h3>
+                                <p>Medical support & nutrition</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Safe Shelter</h3>
+                                <p>Secure living environments</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Community</h3>
+                                <p>Building supportive networks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="action-card">
+                    <div class="action-card-image">
+                        <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" alt="Donation" loading="lazy" />
+                    </div>
+                    <div class="action-card-content">
+                        <div class="title"><i class="fas fa-hand-holding-heart"></i> Make a Donation</div>
+                        <p>Support our foundation by placing your generous donation. Every contribution makes a real difference in a child's life.</p>
+                        <button class="btn"><a href="https://wa.me/+256741024006">Donate Now</a></button>
+                    </div>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-card-image">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80" alt="Volunteering" loading="lazy" />
+                    </div>
+                    <div class="action-card-content">
+                        <div class="title"><i class="fas fa-users"></i> Become a Volunteer</div>
+                        <p>Join our mission! Share your talents and time to help create lasting change in children's lives across Africa.</p>
+                        <button class="btn btn-outline"><a href="#joinSection">Volunteer Today</a></button>
+                    </div>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-card-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80" alt="Education" loading="lazy" />
+                    </div>
+                    <div class="action-card-content">
+                        <div class="title"><i class="fas fa-graduation-cap"></i> Sponsor Education</div>
+                        <p>Help us provide quality education to every child. They are our future leaders and change-makers.</p>
+                        <button class="btn btn-outline"><a href="#joinSection">Sponsor a Child</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMS SECTION -->
+    <section class="program fullContainer" id="programSection">
+        <div class="container">
+            <h2 class="sectionTitle">Our Programs</h2>
+            <p class="sectionSubtitle">Discover the various initiatives we run to support and empower children in need</p>
+            
+            <div class="boxContainer">
+                <div class="program-box">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Education program" loading="lazy" />
+                        <span class="program-badge">Active</span>
+                    </div>
+                    <div class="programTitle">Education for Every Child</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <div class="donationCount">Raised: <span>$7,500</span> of $10,000</div>
+                    <button class="btn"><a href="https://wa.me/+256741024006"><i class="fas fa-arrow-right"></i> Support Now</a></button>
+                </div>
+
+                <div class="program-box">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80" alt="Nutrition program" loading="lazy" />
+                        <span class="program-badge">Active</span>
+                    </div>
+                    <div class="programTitle">Nutrition & Healthcare</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                    <div class="donationCount">Raised: <span>$6,000</span> of $10,000</div>
+                    <button class="btn"><a href="https://wa.me/+256741024006"><i class="fas fa-arrow-right"></i> Support Now</a></button>
+                </div>
+
+                <div class="program-box">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=600&q=80" alt="Child protection" loading="lazy" />
+                        <span class="program-badge">Active</span>
+                    </div>
+                    <div class="programTitle">Child Protection</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%"></div>
+                    </div>
+                    <div class="donationCount">Raised: <span>$4,500</span> of $10,000</div>
+                    <button class="btn"><a href="https://wa.me/+256741024006"><i class="fas fa-arrow-right"></i> Support Now</a></button>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="education fullContainer" id="educationSection">
+        <div class="video-wrapper">
+            <video autoplay muted loop playsinline class="videoPlayer">
+                <source src="./video/12125583_3840_2160_25fps.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video
+            </video>
+            <div class="education-overlay">
+                <div class="container">
+                    <div class="education-content">
+                        <h2 class="sectionTitle">Education Initiatives</h2>
+                        <div class="educationContainer">
+                            <h3>Building Futures Through <strong>Quality Education</strong></h3>
+                            <p class="p">We provide comprehensive educational support including school supplies, uniforms, tuition fees, and mentorship programs to ensure every child has access to quality education.</p>
+                            <button class="btn btn-white"><a href="#joinSection"><i class="fas fa-compass"></i> Get Involved</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="blog fullContainer" id="blogSection">
+        <div class="container">
+            <h2 class="sectionTitle">Latest from Our Blog</h2>
+            <p class="sectionSubtitle">Stories, updates, and insights from our work with children across Africa</p>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=600&q=80" alt="Blog post 1" loading="lazy" />
+                        <span class="blog-category">Success Story</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Feb 15, 2026</span>
+                            <span><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3>From Orphan to University Graduate: Sarah's Inspiring Journey</h3>
+                        <p>Meet Sarah, who overcame incredible odds with the support of Beacon Children's Foundation to become the first in her family to attend university.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="Blog post 2" loading="lazy" />
+                        <span class="blog-category">Impact</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Feb 10, 2026</span>
+                            <span><i class="far fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h3>Building 10 New Schools in Rural Uganda: Our 2026 Initiative</h3>
+                        <p>We're excited to announce our ambitious plan to construct 10 new schools in underserved rural communities, bringing education to over 2,000 children.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80" alt="Blog post 3" loading="lazy" />
+                        <span class="blog-category">Health</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Feb 5, 2026</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Nutrition Program Reaches 1,000 Children Milestone</h3>
+                        <p>Our comprehensive nutrition and healthcare program has successfully provided meals and medical care to over 1,000 children in the past year.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-outline"><a href="#">View All Posts <i class="fas fa-arrow-right"></i></a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery fullContainer" id="gallerySection">
+        <div class="container">
+            <h2 class="sectionTitle">Our Gallery</h2>
+            <p class="sectionSubtitle">Glimpses of hope, joy, and transformation from our programs</p>
+            
+            <div class="galleryContainer">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?w=400&q=80" alt="Child smiling" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <div class="title">Eric - Age 10</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544779493-aa344a6ddaac?w=400&q=80" alt="Child in classroom" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <div class="title">Annet - Learning</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80" alt="Children playing" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <div class="title">Tonny & Friends</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=400&q=80" alt="Child reading" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <div class="title">Eve - Reading Time</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&q=80" alt="Group activity" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <div class="title">Sam - Sports Day</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=400&q=80" alt="Child with book" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <div class="title">Carol - Studying</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80" alt="Children together" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <div class="title">Derrick - Community</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=400&q=80" alt="Happy child" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <div class="title">Mercy - Smiling</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOIN SECTION -->
+    <section class="join fullContainer" id="joinSection">
+        <div class="container">
+            <div class="joinTitle">Adopt a Child & <span>Save Lives</span></div>
+            <p class="jp">
+                Our success depends on the talent and passion of our people. We are committed to fostering safe, inclusive environments that value diversity, personal growth, and innovation. Join us in making a difference.
+            </p>
+            <div class="join-buttons">
+                <button class="joinNow btn"><a href="#"><i class="fas fa-user-plus"></i> Join Our Team</a></button>
+                <button class="adoptBtn btn"><a href="#"><i class="fas fa-child"></i> Adopt a Child</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact fullContainer" id="contactSection">
+        <div class="container">
+            <h2 class="sectionTitle">Get In Touch</h2>
+            <p class="sectionSubtitle">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visit Us</h3>
+                            <p>Iganga Uganda<br>Uganda, East Africa</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <a href="tel:+256741024006">+256 755 749 193</a><br>
+                            <a href="tel:+256700000000">+256 755 749 193</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <a href="mailto:info@beaconchildren.org">info@beaconchildren.org</a><br>
+                            <a href="mailto:donate@beaconchildren.org">donate@beaconchildren.org</a>
+                        </div>
+                    </div>
+
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.751967155986!2d32.64638507349248!3d0.3304399640073321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db954fc8cb48d%3A0x929c40c8240b0d7d!2sIGANGA%20MUNICIPAL%20COUNCIL%20CONSTITUENCY%20TAILORING%20SACCO%20EMYOOGA!5e0!3m2!1sen!2sug!4v1771525785488!5m2!1sen!2sug" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3>Send Us a Message</h3>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form id="contactForm" action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="" />
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="" />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="" />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="How can we help?" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h1>Beacon<span>Of Hope Foundation</span></h1>
+                </div>
+                <p>Lighting hope and transforming lives of African children through education, care, and community support. Together, we can build a brighter future.</p>
+                <div class="social-links">
+                    <a href="mailto:info@beaconchildren.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://x.com/BeaconChildren" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/BeaconChildren" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/beacon-children" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/+256741024006" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/beaconchildren" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#homeSection"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#aboutSection"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#programSection"><i class="fas fa-chevron-right"></i> Programs</a></li>
+                    <li><a href="#educationSection"><i class="fas fa-chevron-right"></i> Education</a></li>
+                    <li><a href="#blogSection"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                    <li><a href="#contactSection"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Programs</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Education Support</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Healthcare</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Child Protection</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Clean Water</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Nutrition</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Sponsorship</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Iganga, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 755 749 193</p>
+                <p><i class="fas fa-envelope"></i> info@beaconchildren.org</p>
+                <p><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year"></span> Beacon Of Hope Foundation. All rights reserved. | Making a difference, one child at a time.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navList = document.getElementById("navList");
+            const navLinks = document.querySelectorAll(".nav-list a");
+            const navbar = document.getElementById("navbar");
+            const yearSpan = document.getElementById("year");
+            const scrollTop = document.getElementById("scrollTop");
+            
+            // Set current year in footer
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Toggle mobile menu
+            if (menuToggle && navList) {
+                menuToggle.addEventListener("click", function () {
+                    const isExpanded = this.getAttribute("aria-expanded") === "true";
+                    this.setAttribute("aria-expanded", !isExpanded);
+                    this.classList.toggle("active");
+                    navList.classList.toggle("active");
+                    document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : '';
+                });
+            }
+
+            // Close mobile menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    if (navList.classList.contains("active")) {
+                        menuToggle.classList.remove("active");
+                        navList.classList.remove("active");
+                        menuToggle.setAttribute("aria-expanded", "false");
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+
+            // Navbar scroll effect
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("scrolled");
+                    scrollTop.classList.add("visible");
+                } else {
+                    navbar.classList.remove("scrolled");
+                    scrollTop.classList.remove("visible");
+                }
+            });
+
+            // Scroll to top functionality
+            if (scrollTop) {
+                scrollTop.addEventListener("click", function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Form submission
+            const contactForm = document.getElementById("contactForm");
+            if (contactForm) {
+                contactForm.addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    
+                    // Create ripple effect
+                    const btn = this.querySelector(".submit-btn");
+                    const ripple = document.createElement("span");
+                    ripple.classList.add("ripple");
+                    btn.appendChild(ripple);
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                    
+                    // Show success message (in real implementation, this would submit the form)
+                    alert("Thank you for your message! We'll get back to you soon.");
+                    this.reset();
+                });
+            }
+
+            // Image loading animation
+            document.querySelectorAll("img").forEach(img => {
+                img.addEventListener("load", function() {
+                    this.classList.add("loaded");
+                });
+                if (img.complete) {
+                    img.classList.add("loaded");
+                }
+            });
+
+            // Button ripple effect
+            document.querySelectorAll(".btn, button, .submit-btn").forEach(button => {
+                button.addEventListener("click", function(e) {
+                    const ripple = document.createElement("span");
+                    ripple.classList.add("ripple");
+                    
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.width = ripple.style.height = size + "px";
+                    ripple.style.left = x + "px";
+                    ripple.style.top = y + "px";
+                    
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        });
+
+        // ScrollReveal Animations
+        ScrollReveal({
+            reset: false,
+            distance: "60px",
+            duration: 1000,
+            delay: 100,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            viewFactor: 0.2
+        });
+
+        // Hero section
+        ScrollReveal().reveal(".banner-content h1", { delay: 100, origin: "bottom", distance: "60px" });
+        ScrollReveal().reveal(".banner-content .p", { delay: 200, origin: "bottom", distance: "40px" });
+        ScrollReveal().reveal(".banner-buttons", { delay: 350, origin: "bottom", distance: "30px" });
+        ScrollReveal().reveal(".banner-image", { delay: 400, origin: "right", distance: "60px" });
+        ScrollReveal().reveal(".stats-badge", { delay: 600, origin: "bottom", distance: "40px" });
+
+        // About section
+        ScrollReveal().reveal(".about-image", { delay: 100, origin: "left", distance: "60px" });
+        ScrollReveal().reveal(".about-content h2", { delay: 200, origin: "right", distance: "40px" });
+        ScrollReveal().reveal(".about-content .p", { delay: 300, origin: "right", distance: "30px" });
+        ScrollReveal().reveal(".feature-item", { delay: 400, interval: 100, origin: "bottom", distance: "30px" });
+        ScrollReveal().reveal(".action-card", { delay: 200, interval: 150, origin: "bottom", distance: "50px" });
+
+        // Programs section
+        ScrollReveal().reveal(".sectionTitle", { delay: 100, origin: "top", distance: "40px" });
+        ScrollReveal().reveal(".sectionSubtitle", { delay: 200, origin: "top", distance: "30px" });
+        ScrollReveal().reveal(".program-box", { delay: 300, interval: 150, origin: "bottom", distance: "50px" });
+
+        // Education section
+        ScrollReveal().reveal(".education-content", { delay: 200, origin: "left", distance: "60px" });
+
+        // Blog section
+        ScrollReveal().reveal(".blog-card", { delay: 200, interval: 150, origin: "bottom", distance: "50px" });
+
+        // Gallery section
+        ScrollReveal().reveal(".gallery-item", { delay: 100, interval: 80, origin: "bottom", distance: "30px" });
+
+        // Join section
+        ScrollReveal().reveal(".joinTitle", { delay: 100, origin: "top", distance: "40px" });
+        ScrollReveal().reveal(".jp", { delay: 200, origin: "top", distance: "30px" });
+        ScrollReveal().reveal(".join-buttons", { delay: 300, origin: "bottom", distance: "40px" });
+
+        // Contact section
+        ScrollReveal().reveal(".contact-card", { delay: 150, interval: 100, origin: "left", distance: "40px" });
+        ScrollReveal().reveal(".map-container", { delay: 500, origin: "bottom", distance: "40px" });
+        ScrollReveal().reveal(".contact-form-wrapper", { delay: 200, origin: "right", distance: "60px" });
+
+        // Footer
+        ScrollReveal().reveal(".footer-brand, .footer-column", { delay: 150, interval: 100, origin: "bottom", distance: "40px" });
+
+        // Progress bar animation
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: "0px"
+        };
+
+        const progressObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressFill = entry.target;
+                    const width = progressFill.style.width;
+                    progressFill.style.width = "0";
+                    setTimeout(() => {
+                        progressFill.style.width = width;
+                    }, 200);
+                    progressObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll(".progress-fill").forEach(fill => {
+            progressObserver.observe(fill);
+        });
+    </script>
+
+    <!-- Tidio Chat -->
+    <script src="//code.tidio.co/a32onbhdj6w4skyexbklmr0oketp1izj.js" async></script>
+</body>
+</html>
